@@ -18,11 +18,7 @@ This API is written in PHP and utilizes the [Slim Framework][2].  The data that 
 
 ## License
 
-MIT
-
   [1]: http://taxee.io
   [2]: http://www.slimframework.com/
   [3]: http://taxee.io
-  [4]: https://getcomposer.org/doc/00-intro.mdmentation on the API endpoints can be found there.
-
-This API is written in PHP, and utilizes the [Slim Framework][2].  The data that drives Taxee (the tax data) is contained in static JSON files.  The GET requests detailed on [taxee.io][3] simply serve this static data.  The PUT request (the calculation endpoint) consumes some of this static JSON data, and then performs a few minor calculations on it.
+  [4]: https://getcomposer.org/doc/00-intro
