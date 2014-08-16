@@ -43,8 +43,7 @@
 	    $pay_periods 	= ($app->request->post('pay_periods') == false) ? 1 : $app->request->post('pay_periods');
 	    $filing_status 	= $app->request->post('filing_status');
 	    $state 			= $app->request->post('state');
-	    //var_dump($app->request);
-	    //exit;
+
 	    if (!isset($pay_rate) || !isset($filing_status))
 	    {
 	    	$response['success'] = false;
