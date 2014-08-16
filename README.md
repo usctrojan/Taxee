@@ -14,7 +14,7 @@ This API is written in PHP and utilizes the [Slim Framework][2].  The data that 
  2. Checkout this repository
  3. Run ``` php composer.phar install``` to install the PHP dependencies.
  4. Start up a PHP server in the directory (Ex. ```php -S localhost:8000```)
- 5. If everything went well, you should be able to load up 2014's federal tax data in your browser by going to http://localhost:8000/api/v1/federal/2014
+ 5. If everything went well, you should be able to load up 2014's federal tax data in your browser by going to http://localhost:8000/v1/federal/2014
 
 ## License
 

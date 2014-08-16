@@ -20,7 +20,7 @@ class StateTaxCalculatorModel extends TaxCalculatorModel {
         } else {
             $state = strtolower(StateConstants::abbreviation_to_full_name($state_abbr));
             $state = str_replace(" ", "_", $state);
-            $handle = file_get_contents(CDN_URL . "api/tax_tables/" . $year . "/" . $state . ".json", "r");
+            $handle = file_get_contents(CDN_URL . "tax_tables/" . $year . "/" . $state . ".json", "r");
             $tax_table = json_decode($handle);
 
             $response['success'] = true;

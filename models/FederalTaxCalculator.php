@@ -10,7 +10,7 @@ class FederalTaxCalculatorModel extends TaxCalculatorModel {
             $response['success'] = false;
             $response['reason'] = "Invalid year";
         } else {
-            $handle = file_get_contents(CDN_URL . "api/tax_tables/" . $year . "/federal.json", "r");
+            $handle = file_get_contents(CDN_URL . "tax_tables/" . $year . "/federal.json", "r");
             $response['success'] = true;
             $tax_table = json_decode($handle);
             $response['data'] = $tax_table;

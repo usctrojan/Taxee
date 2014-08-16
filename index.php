@@ -1,24 +1,7 @@
 <?php
-	ini_set('display_startup_errors',1);
-	ini_set('display_errors',1);
-	error_reporting(-1);
-
-	function getCDNPath()
-	{
-		if (getenv("CDNBASE") != "")
-		{
-		    $version_file = json_decode(file_get_contents("../../version.json"));
-		    return getenv("CDNBASE") . $version_file->version . "/";
-		}
-		else
-		{
-		    return dirname(dirname(__FILE__)) . "/";
-		}
-	}
-
 	define("CDN_URL", getCDNPath());
 
-	require '../vendor/autoload.php';
+	require 'vendor/autoload.php';
 	require 'models/TaxCalculator.php';
 	require 'models/StateTaxCalculator.php';
 	require 'models/FederalTaxCalculator.php';
@@ -60,12 +43,12 @@
 	    $pay_periods 	= ($app->request->post('pay_periods') == false) ? 1 : $app->request->post('pay_periods');
 	    $filing_status 	= $app->request->post('filing_status');
 	    $state 			= $app->request->post('state');
-
+	    //var_dump($app->request);
+	    //exit;
 	    if (!isset($pay_rate) || !isset($filing_status))
 	    {
 	    	$response['success'] = false;
 	    	$response['reason'] = "Missing required parameters";
-
 	    }
 	    else
 	    {
@@ -95,4 +78,24 @@
 	});
 
 	$app->run();
+
+	/*
+	* The hosted version of Taxee has all
+	* static assets hosted in a CDN.  Create a
+	* CDNBASE environment variable that holds
+	* the path to the CDN to utilize
+	*/
+	function getCDNPath()
+	{
+		if (getenv("CDNBASE") != "")
+		{
+		    $version_file = json_decode(file_get_contents("../../version.json"));
+		    return getenv("CDNBASE") . $version_file->version . "/";
+		}
+		else
+		{
+		    return dirname(__FILE__) . "/";
+		}
+	}
+
 ?>
