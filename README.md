@@ -18,6 +18,8 @@ This API is written in PHP and utilizes the [Slim Framework][2].  The data that 
 
 ## License
 
+MIT
+
   [1]: http://taxee.io
   [2]: http://www.slimframework.com/
   [3]: http://taxee.io
