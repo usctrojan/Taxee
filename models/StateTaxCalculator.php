@@ -65,7 +65,7 @@ class StateTaxCalculatorModel extends TaxCalculatorModel {
         }
 
         if (isset($target_table->type)
-            && ($target_table->type == "none" || $target_table->type == "TODO UNKNOWN!") {
+            && ($target_table->type == "none" || $target_table->type == "TODO UNKNOWN!")) {
             return null;
         } else {
             $amount = 0;
