@@ -87,7 +87,7 @@
 		if (getenv("CDNBASE") != "")
 		{
 		    $version_file = json_decode(file_get_contents("../../version.json"));
-		    return getenv("CDNBASE") . $version_file->version . "/api/";
+		    return getenv("CDNBASE") . $version_file->version . "/" . "api/";
 		}
 		else
 		{
