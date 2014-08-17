@@ -4,9 +4,9 @@
 
 #### Your friendly neighborhod income tax data and calculation API.
 
-This repository contains the source code for the Taxee API.  The hosted version of this API can be found on [taxee.io][1], and documentation on the API endpoints can be found there.
+This repository contains the source code for the Taxee REST API.  The hosted version of this API can be found on [taxee.io][1], along with documentation on the API endpoints.
 
-This API is written in PHP and utilizes the [Slim Framework][2].  The data that drives Taxee (the tax data) is contained in static JSON files.  The GET requests detailed on [taxee.io][3] simply serve this static data.  The PUT request (the calculation endpoint) consumes some of this static JSON data, and then performs a few minor calculations on it.
+This API is written in PHP (PHP5) and utilizes the [Slim Framework][2].  The data that drives Taxee (the tax data) is contained in static JSON files.  The GET requests detailed on [taxee.io][3] simply serve this static data.  The PUT request (the calculation endpoint) consumes some of this static JSON data, and then performs a few minor calculations using it.
 
 ## Usage
 
