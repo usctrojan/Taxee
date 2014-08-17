@@ -1,4 +1,25 @@
 <?php
+
+	/*
+	* The hosted version of Taxee has all
+	* static assets hosted in a CDN.  Create a
+	* CDNBASE environment variable that holds
+	* the path to the CDN to utilize
+	*/
+	function getCDNPath()
+	{
+		if (getenv("CDNBASE") != "")
+		{
+		    $version_file = json_decode(file_get_contents("../../version.json"));
+		    return getenv("CDNBASE") . $version_file->version . "/" . "api/";
+		}
+		else
+		{
+		    return dirname(__FILE__) . "/";
+		}
+	}
+
+
 	define("CDN_URL", getCDNPath());
 
 	require 'vendor/autoload.php';
@@ -75,24 +96,4 @@
 	});
 
 	$app->run();
-
-	/*
-	* The hosted version of Taxee has all
-	* static assets hosted in a CDN.  Create a
-	* CDNBASE environment variable that holds
-	* the path to the CDN to utilize
-	*/
-	function getCDNPath()
-	{
-		if (getenv("CDNBASE") != "")
-		{
-		    $version_file = json_decode(file_get_contents("../../version.json"));
-		    return getenv("CDNBASE") . $version_file->version . "/" . "api/";
-		}
-		else
-		{
-		    return dirname(__FILE__) . "/";
-		}
-	}
-
 ?>
