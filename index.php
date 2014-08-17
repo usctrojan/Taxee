@@ -9,9 +9,7 @@
 	$state_calculator = new StateTaxCalculatorModel();
 	$federal_calculator = new FederalTaxCalculatorModel();
 
-	$app = new \Slim\Slim(array(
-		'debug' => true
-	));
+	$app = new \Slim\Slim();
 
 	// Parse the response and display it.
 	$app->hook('respond', function ($response) use ($app) {
